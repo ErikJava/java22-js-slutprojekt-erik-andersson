@@ -6,6 +6,7 @@ body {
     flex-wrap: wrap;
     background-color: bisque;
     justify-content: center;
+    
 }
 
 #submit {
@@ -39,4 +40,8 @@ input[type="text"] {
 
 input[type="number"] {
     font-size: 20px;
+}
+
+#imgContainer {
+    margin-top: 10%;
 }
