@@ -1,5 +1,8 @@
 const imgContainer = document.querySelector('#imgContainer');
+const searchError = document.querySelector('#errorMessage')
+const amountError = document.querySelector('#errorMessage')
 document.querySelector('button').addEventListener('click', getUserInput);
+
 
 // Gets user input.
 function getUserInput(event) {
@@ -15,16 +18,14 @@ function getUserInput(event) {
     /* Checks if user input is empty and displays error message.
     If everything is ok, call getImages function. */
     if (searchBar === '') {
-        const searchError = document.createElement('h1')
-        imgContainer.append(searchError)
         searchError.innerText = 'Please enter search term.';
     } else if (amountField === '' || amountField === '0') {
-        const amountError = document.createElement('h1')
-        imgContainer.append(amountError)
         amountError.innerText = 'Please enter amount.';
     } else {
         imgContainer.innerHTML = '';
         getImages(searchBar, amountField, sortMenu);
+        searchError.innerText = '';
+        amountError.innerText = '';
     }
 }
 
